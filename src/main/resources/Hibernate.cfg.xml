@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?> -->
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+ 
+"<a href="http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd</a>">
+ 
+<hibernate-configuration>
+ 
+<session-factory>
+ 
+<!-- Database Connection Settings -->
+ 
+<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+<!--database's name : planb (we choose it) + port :3306 by default--> 
+<property name="connection.url">jdbc:mysql://localhost:3306/planb</property>
+ 
+<property name="connection.username">root</property>
+ 
+<property name="connection.password"></property>
+ 
+<!-- Connection Pool Size (built-in) : value "1"-->
+ 
+<property name="connection.pool.size">1</property>
+ 
+<!-- SQL Dialect -->
+ 
+<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+ 
+ 
+<!-- Disable the second-level cache -->
+ 
+<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+ 
+<!-- Echo all executed SQL to stdout -->
+ 
+<property name="hibernate.show_sql">true</property>
+ 
+<!-- Drop the existing tables and create new one -->
+ 
+<property name="hbm2ddl.auto">create</property>
+ 
+<!-- Mention here all the model classes along with their package name -->
+ 
+<mapping class="fr.planb.gr.model.Person"/>
+<mapping class="fr.planb.gr.model.Contact"/>
+<mapping class="fr.planb.gr.model.User"/>
+ 
+</session-factory>
+ 
+</hibernate-configuration>
